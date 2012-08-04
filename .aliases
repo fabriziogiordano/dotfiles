@@ -6,6 +6,11 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+# Programs
+alias slt='open -a "Sublime Text 2"'
+# also do this:
+# ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
 alias p="cd ~/Projects"

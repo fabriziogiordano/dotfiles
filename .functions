@@ -1,6 +1,20 @@
 # Create a new directory and enter it
-function md() {
+function mkd() {
 	mkdir -p "$@" && cd "$@"
+}
+
+# Determine size of a file or total size of a directory
+function fs() {
+	if du -b /dev/null > /dev/null 2>&1; then
+		local arg=-sbh
+	else
+		local arg=-sh
+	fi
+	if [[ -n "$@" ]]; then
+		du $arg -- "$@"
+	else
+		du $arg .[^.]* *
+	fi
 }
 
 # Use Git’s colored diff when available
@@ -11,10 +25,15 @@ if [ $? -eq 0 ]; then
 	}
 fi
 
-# Create a data URL from an image (works for other file types too, if you tweak the Content-Type afterwards)
-dataurl() {
-	echo "data:image/${1##*.};base64,$(openssl base64 -in "$1")" | tr -d '\n'
+# Create a data URL from a file
+function dataurl() {
+	local mimeType=$(file -b --mime-type "$1")
+	if [[ $mimeType == text/* ]]; then
+		mimeType="${mimeType};charset=utf-8"
+	fi
+	echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
 }
+
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
@@ -37,11 +56,6 @@ function gz() {
 # Send a fake UA string for sites that sniff it instead of using the Accept-Encoding header. (Looking at you, ajax.googleapis.com!)
 function httpcompression() {
 	encoding="$(curl -LIs -H 'User-Agent: Mozilla/5 Gecko' -H 'Accept-Encoding: gzip,deflate,compress,sdch' "$1" | grep '^Content-Encoding:')" && echo "$1 is encoded using ${encoding#* }" || echo "$1 is not using any encoding"
-}
-
-# Gzip-enabled `curl`
-function gurl() {
-	curl -sH "Accept-Encoding: gzip" "$@" | gunzip
 }
 
 # Syntax-highlight JSON strings or files

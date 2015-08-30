@@ -136,3 +136,10 @@ function unquarantine() {
 		xattr -r -d "$attribute" "$@"
 	done
 }
+
+# Better copy and paste on command line
+function clip { [ -t 0 ] && pbpaste || pbcopy }
+#  % echo hello | clip
+#  % clip
+
+

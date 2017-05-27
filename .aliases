@@ -20,6 +20,10 @@ alias s="subl ."
 alias o="open"
 alias oo="open ."
 
+alias l='ls -al'
+alias ls='command ls -G'
+alias lsd='ls -l ${colorflag} | grep "^d"'
+
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 
 

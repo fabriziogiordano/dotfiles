@@ -83,6 +83,7 @@ brew cask install --appdir="/Applications" 1password
 echo Install Development tools
 #brew install nano
 brew install git
+brew install tmux
 #brew install subversion
 
 # Get a better shell

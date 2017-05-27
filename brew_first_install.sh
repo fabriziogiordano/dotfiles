@@ -31,15 +31,15 @@ brew services list
 # Install important utilities
 echo Install Core utilities
 brew install coreutils
-brew install ffmpeg
-brew install imagemagick
-brew install graphicsmagick
-brew install httpie
+#brew install ffmpeg
+#brew install imagemagick
+#brew install graphicsmagick
+#brew install httpie
  
 # Crypto
-echo Install Crypto softwares
-brew install gpg keybase gpg-agent
-brew install tunnelblick
+#echo Install Crypto softwares
+#brew install gpg keybase gpg-agent
+#brew install tunnelblick
  
 # Software
 echo Install basic apps
@@ -49,6 +49,7 @@ echo Install basic apps
 #brew cask install --appdir="/Applications" google-drive
 #brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" google-chrome-canary
+brew cask install --appdir="/Applications" caffeine
 #brew cask install --appdir="/Applications" firefox
 #brew cask install --appdir="/Applications" dropbox
 #brew cask install --appdir="/Applications" atom

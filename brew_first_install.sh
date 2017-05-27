@@ -1,45 +1,53 @@
 #!/bin/sh
- 
+
 echo Install all AppStore Apps at first!
 # If you are looking into a solution to automate AppStore installs,
 # check mas https://github.com/argon/mas
 # I installed XCode, Simplenote, Clocks, Stuffit Expander, Cloudapp, Forklift.
 read -p "Press any key to continue... " -n1 -s
 echo  '\n'
- 
- 
+
+
 # Install Homebrew
- 
+
 # Check for Homebrew
 if test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew-install.log
 fi
- 
+
 # Make sure we’re using the latest Homebrew.
 brew update
- 
+
 # Upgrade any already-installed formulae.
 brew upgrade
- 
+
 # Add some casks
 brew tap caskroom/cask
 brew services list
- 
+
 # Install important utilities
 echo Install Core utilities
+# Install GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
+echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils
 #brew install ffmpeg
 #brew install imagemagick
 #brew install graphicsmagick
 #brew install httpie
- 
+
+# Install wget with IRI support
+brew install wget --enable-iri
+
+
 # Crypto
 #echo Install Crypto softwares
 #brew install gpg keybase gpg-agent
 #brew install tunnelblick
- 
+
 # Software
 echo Install basic apps
 #brew cask install --appdir="/Applications" screenhero
@@ -65,21 +73,21 @@ brew cask install --appdir="/Applications" 1password
 #brew cask install --appdir="/Applications" rescuetime
 #brew cask install --appdir="/Applications" gas-mask
 #brew cask install --appdir="/Applications" appcleaner
- 
+
 # Keyboard tweaks
 #brew install karabiner
 #brew install seil
 # https://pqrs.org/osx/karabiner/seil.html.en
- 
+
 # Development
 echo Install Development tools
 #brew install nano
 brew install git
 #brew install subversion
- 
+
 # Get a better shell
 #brew install zsh zsh-completions
- 
+
 # Development tools
 #brew install unison
 #brew install php70
@@ -98,7 +106,7 @@ brew install npm
 #brew install wp-cli
 #brew install chromedriver
 #gem install wbench
- 
+
 # Entertainment
 echo Install some nice-to-have Entertainment tools
 #brew cask install --appdir="/Applications" sonarr
@@ -109,16 +117,16 @@ echo Install some nice-to-have Entertainment tools
 #brew cask install --appdir="/Applications" plex-home-theater
 #brew cask install --appdir="/Applications" plex-media-server
 #brew cask install --appdir="/Applications" myo-connect
- 
+
 # https://zachholman.com/boom/
 #gem install boom
- 
+
 # https://github.com/tj/node-gify
 # https://cloudup.com/blog/how-to-create-high-quality-animated-gifs-from-video
 #npm install -g gify
- 
+
 # Cleanup
 brew cleanup
 rm -f -r /Library/Caches/Homebrew/*
- 
+
 echo "All done! Phew!"

@@ -48,6 +48,7 @@ echo Install basic apps
 #brew cask install --appdir="/Applications" wordpresscom
 #brew cask install --appdir="/Applications" google-drive
 #brew cask install --appdir="/Applications" google-chrome
+brew cask install --appdir="/Applications" iterm2
 brew cask install --appdir="/Applications" google-chrome-canary
 brew cask install --appdir="/Applications" caffeine
 #brew cask install --appdir="/Applications" firefox

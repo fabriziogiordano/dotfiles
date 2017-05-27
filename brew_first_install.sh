@@ -25,7 +25,6 @@ brew upgrade
  
 # Add some casks
 brew tap caskroom/cask
-brew tap homebrew/dupes
 brew services list
  
 # Install important utilities

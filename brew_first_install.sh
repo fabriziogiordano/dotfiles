@@ -21,7 +21,7 @@ fi
 brew update
  
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
  
 # Add some casks
 brew tap caskroom/cask
@@ -52,9 +52,9 @@ brew cask install --appdir="/Applications" iterm2
 brew cask install --appdir="/Applications" google-chrome-canary
 brew cask install --appdir="/Applications" caffeine
 #brew cask install --appdir="/Applications" firefox
-#brew cask install --appdir="/Applications" dropbox
-#brew cask install --appdir="/Applications" atom
-#brew cask install --appdir="/Applications" 1password
+brew cask install --appdir="/Applications" dropbox
+brew cask install --appdir="/Applications" atom
+brew cask install --appdir="/Applications" 1password
 #brew cask install --appdir="/Applications" slack
 #brew cask install --appdir="/Applications" vlc
 #brew cask install --appdir="/Applications" adium

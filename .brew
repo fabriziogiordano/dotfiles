@@ -62,7 +62,6 @@ brew cask install --appdir="/Applications" caffeine
 brew cask install --appdir="/Applications" dropbox
 brew cask install --appdir="/Applications" atom
 brew cask install --appdir="/Applications" 1password
-brew install direnv
 #brew cask install --appdir="/Applications" slack
 #brew cask install --appdir="/Applications" vlc
 #brew cask install --appdir="/Applications" adium
@@ -82,13 +81,10 @@ brew install direnv
 
 # Development
 echo Install Development tools
-#brew install nano
 brew install git
 brew install tmux
-#brew install subversion
-
-# Get a better shell
-#brew install zsh zsh-completions
+brew install direnv
+brew install whatchman
 
 # Development tools
 #brew install unison
@@ -97,6 +93,7 @@ brew install tmux
 #brew install wget
 brew install node
 brew install npm
+brew install yarn
 #brew install gulp
 #brew install grunt
 #brew install ack

@@ -17,13 +17,21 @@ then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew-install.log
 fi
 
+echo Brew Downloaded
+
 # Make sure we’re using the latest Homebrew.
 brew update
+
+echo Brew Updated
 
 # Upgrade any already-installed formulae.
 brew upgrade
 
+echo Brew Upgraded
+
 # Add some casks
+echo Brew Adding Some Casks
+
 brew tap caskroom/cask
 brew services list
 

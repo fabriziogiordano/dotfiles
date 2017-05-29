@@ -91,7 +91,7 @@ brew install whatchman
 brew install node
 brew install npm
 brew install yarn
-brew install packer # To manage virtual machines
+#brew install packer # To manage virtual machines
 #brew install unison
 #brew install php70
 #brew install mysql

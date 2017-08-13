@@ -24,7 +24,7 @@ alias rmd="rm -rf"
 alias gs="git status -s"
 alias gss="git status"
 alias gc="git commit -m"
-alias coam="f() { git commit -m \"\$*\"; }; f"
+alias gcm="f() { git commit -m \"\$*\"; }; f"
 
 alias bubu="brew update && brew upgrade && brew cleanup && gem cleanup"
 

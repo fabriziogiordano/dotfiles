@@ -19,6 +19,12 @@ alias v="vim"
 alias s="subl ."
 alias o="open"
 alias oo="open ."
+alias rmd="rm -rf"
+
+alias gs="git status -s"
+alias gss="git status"
+alias gc="git commit -m"
+
 alias bubu="brew update && brew upgrade && brew cleanup && gem cleanup"
 
 alias l='ls -al'

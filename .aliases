@@ -25,6 +25,7 @@ alias gs="git status -s"
 alias gss="git status"
 alias gc="git commit -m"
 alias gcm="f() { git commit -m \"\$*\"; }; f"
+alias gpom="git push origin master"
 
 alias bubu="brew update && brew upgrade && brew cleanup && gem cleanup"
 

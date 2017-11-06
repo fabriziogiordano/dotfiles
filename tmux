@@ -43,7 +43,7 @@ set-option -g default-terminal "screen-256color" #"xterm-256color" # "screen-256
 set-option -g pane-active-border-fg green
 
 # utf8 support
-set-window-option -g utf8 on
+# set-window-option -g utf8 on
 
 
 # basic settings

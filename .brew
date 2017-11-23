@@ -87,6 +87,7 @@ brew cask install --appdir="/Applications" atom
 #brew install karabiner
 #brew install seil
 # https://pqrs.org/osx/karabiner/seil.html.en
+brew cask install karabiner-elements
 
 # Development
 echo Install Development tools

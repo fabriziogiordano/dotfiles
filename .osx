@@ -46,6 +46,9 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 # Expand print panel by default
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
+# Add spaces in dock menu
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}';
+
 # Disable the “Are you sure you want to open this application?” dialog
 #defaults write com.apple.LaunchServices LSQuarantine -bool false
 

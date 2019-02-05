@@ -8,6 +8,9 @@ unset file
 # init z   https://github.com/rupa/z
 # . ~/bin/z/z.sh
 
+# https://github.com/skywind3000/z.lua
+eval "$(lua $HOME/z.lua --init bash enhanced)"
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
